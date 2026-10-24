@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mulmandoo Labs</title>
+  <meta name="description" content="Mulmandoo Labs builds apps and games that bring the best experience to mobile.">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+  <link rel="canonical" href="https://mulmandoolabs.com/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mulmandoolabs.com/">
+  <meta property="og:title" content="Mulmandoo Labs">
+  <meta property="og:description" content="Apps and games, crafted for mobile.">
+  <meta name="twitter:card" content="summary">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-alt: #f5f5f7;
+      --text: #1d1d1f;
+      --text-secondary: #6e6e73;
+      --hairline: #d2d2d7;
+      --accent: #0071e3;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000;
+        --bg-alt: #161617;
+        --text: #f5f5f7;
+        --text-secondary: #a1a1a6;
+        --hairline: #424245;
+        --accent: #2997ff;
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+        "Helvetica Neue", "Segoe UI", Roboto, "Noto Sans", "Apple SD Gothic Neo",
+        "Malgun Gothic", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.47;
+      letter-spacing: -0.022em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto;
+      padding-left: max(22px, env(safe-area-inset-left));
+      padding-right: max(22px, env(safe-area-inset-right));
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: color-mix(in srgb, var(--bg) 80%, transparent);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid color-mix(in srgb, var(--hairline) 50%, transparent);
+      padding-top: env(safe-area-inset-top);
+    }
+    header .wrap {
+      height: 48px;
+      display: flex;
+      align-items: center;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .brand svg { width: 22px; height: 22px; }
+
+    main { flex: 1; }
+
+    .hero {
+      text-align: center;
+      padding: clamp(96px, 18vh, 180px) 0 clamp(80px, 14vh, 140px);
+    }
+    .eyebrow {
+      margin: 0 0 12px;
+      font-size: clamp(17px, 2.2vw, 21px);
+      font-weight: 600;
+      color: var(--text-secondary);
+      letter-spacing: 0.004em;
+    }
+    h1 {
+      margin: 0 auto;
+      max-width: 14ch;
+      font-size: clamp(40px, 8vw, 80px);
+      line-height: 1.05;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+    }
+    .lede {
+      margin: 24px auto 0;
+      max-width: 34ch;
+      font-size: clamp(19px, 2.4vw, 24px);
+      line-height: 1.38;
+      color: var(--text-secondary);
+      letter-spacing: 0.009em;
+    }
+
+    .values {
+      background: var(--bg-alt);
+      padding: clamp(64px, 10vw, 112px) 0;
+    }
+    .values h2 {
+      margin: 0 0 clamp(40px, 6vw, 64px);
+      text-align: center;
+      font-size: clamp(32px, 5vw, 48px);
+      line-height: 1.08;
+      font-weight: 700;
+      letter-spacing: -0.003em;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--bg);
+      border-radius: 18px;
+      padding: 32px 28px;
+    }
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 21px;
+      line-height: 1.19;
+      font-weight: 600;
+      letter-spacing: 0.011em;
+    }
+    .card p {
+      margin: 0;
+      color: var(--text-secondary);
+    }
+
+    footer {
+      padding: 20px 0 max(20px, env(safe-area-inset-bottom));
+      font-size: 12px;
+      line-height: 1.33;
+      letter-spacing: -0.01em;
+      color: var(--text-secondary);
+    }
+    footer .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .hero > * {
+        animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+      }
+      .hero > :nth-child(2) { animation-delay: 0.08s; }
+      .hero > :nth-child(3) { animation-delay: 0.16s; }
+      @keyframes rise {
+        from { opacity: 0; transform: translateY(16px); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <a class="brand" href="/" aria-label="Mulmandoo Labs home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor"/><path d="M6 20.5c0-5.8 4.5-10.5 10-10.5s10 4.7 10 10.5c0 .8-.7 1.5-1.5 1.5h-17C6.7 22 6 21.3 6 20.5z" fill="var(--bg)"/></svg>
+        Mulmandoo Labs
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Mulmandoo Labs</p>
+        <h1>Made for the device in your hand.</h1>
+        <p class="lede">We build apps and games that deliver the finest experience on mobile.</p>
+      </div>
+    </section>
+
+    <section class="values">
+      <div class="wrap">
+        <h2>What we care about.</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Mobile first.</h3>
+            <p>Every decision starts with the screen in your pocket.</p>
+          </div>
+          <div class="card">
+            <h3>Craft in the details.</h3>
+            <p>Smooth motion, instant response, nothing out of place.</p>
+          </div>
+          <div class="card">
+            <h3>Joy to use.</h3>
+            <p>Apps that feel effortless. Games worth coming back to.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>Copyright &copy; <span id="year">2026</span> Mulmandoo Labs. All rights reserved.</span>
+      <a href="https://github.com/Mulmandoo-Labs">GitHub</a>
+    </div>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
